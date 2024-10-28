@@ -1,5 +1,3 @@
-
-
 # ASP.NET Core Projects 🚀
 
 Welcome to the ASP.NET Core Projects repository! This repository contains various projects built using ASP.NET Core MVC .NET 8. Each project demonstrates different features and best practices for building robust web applications.
@@ -93,7 +91,6 @@ This repository is licensed under the MIT License. See the [LICENSE](LICENSE) fi
 
 If you have any questions or need further assistance, feel free to reach out:
 
-- **Email**: soumyadip@example.com
 - **GitHub**: [SoumyadipYT-OSS](https://github.com/SoumyadipYT-OSS)
 
 Happy coding! 🚀
