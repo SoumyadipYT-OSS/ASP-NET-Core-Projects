@@ -1,0 +1,63 @@
+@model StudentPortal.Models.Student
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<style>
+    body {
+        background: linear-gradient(to right, #4e54c8, #8f94fb);
+        color: white;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    .btn {
+        margin-right: 5px;
+    }
+</style>
+
+<div class="container mt-5">
+    <h1 class="display-4">Edit Student</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-6">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="RegdNo" class="control-label"></label>
+                    <input asp-for="RegdNo" class="form-control" />
+                    <span asp-validation-for="RegdNo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Course" class="control-label"></label>
+                    <input asp-for="Course" class="form-control" />
+                    <span asp-validation-for="Course" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Specilization" class="control-label"></label>
+                    <input asp-for="Specilization" class="form-control" />
+                    <span asp-validation-for="Specilization" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PhNo" class="control-label"></label>
+                    <input asp-for="PhNo" class="form-control" />
+                    <span asp-validation-for="PhNo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                    <a class="btn btn-secondary" asp-action="Index">Back to List</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

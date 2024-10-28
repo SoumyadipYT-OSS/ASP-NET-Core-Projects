@@ -1,0 +1,128 @@
+@model StudentPortal.Models.Student
+
+@{
+    ViewData["Title"] = "Create";
+    var specializations = new List<SelectListItem>
+    {
+        new SelectListItem { Value = "Unspecified", Text = "Unspecified" },
+        new SelectListItem { Value = "CSE", Text = "CSE" },
+        new SelectListItem { Value = "ECE", Text = "ECE" },
+        new SelectListItem { Value = "EEE", Text = "EEE" },
+        new SelectListItem { Value = "ME", Text = "ME" },
+        new SelectListItem { Value = "CE", Text = "CE" },
+        new SelectListItem { Value = "IT", Text = "IT" },
+        new SelectListItem { Value = "CS", Text = "CS" },
+        new SelectListItem { Value = "AI", Text = "AI" },
+        new SelectListItem { Value = "ML", Text = "ML" }
+    };
+
+    var courses = new List<SelectListItem>
+    {
+        new SelectListItem { Value = "Unspecified", Text = "Unspecified" },
+        new SelectListItem { Value = "B.Tech", Text = "B.Tech" },
+        new SelectListItem { Value = "M.Tech", Text = "M.Tech" },
+        new SelectListItem { Value = "BCA", Text = "BCA" },
+        new SelectListItem { Value = "MCA", Text = "MCA" },
+        new SelectListItem { Value = "BBA", Text = "BBA" },
+        new SelectListItem { Value = "MBA", Text = "MBA" }
+    };
+
+    var countryCodes = new List<SelectListItem>
+    {
+        new SelectListItem { Value = "+91", Text = "🇮🇳 +91" },
+        new SelectListItem { Value = "+81", Text = "🇯🇵 +81" },
+        new SelectListItem { Value = "+86", Text = "🇨🇳 +86" },
+        new SelectListItem { Value = "+82", Text = "🇰🇷 +82" },
+        new SelectListItem { Value = "+44", Text = "🇬🇧 +44" },
+        new SelectListItem { Value = "+49", Text = "🇩🇪 +49" },
+        new SelectListItem { Value = "+33", Text = "🇫🇷 +33" },
+        new SelectListItem { Value = "+39", Text = "🇮🇹 +39" },
+        new SelectListItem { Value = "+7", Text = "🇷🇺 +7" },
+        new SelectListItem { Value = "+1", Text = "🇺🇸 +1" },
+        new SelectListItem { Value = "+61", Text = "🇦🇺 +61" },
+        new SelectListItem { Value = "+64", Text = "🇳🇿 +64" },
+        new SelectListItem { Value = "+62", Text = "🇮🇩 +62" },
+        new SelectListItem { Value = "+94", Text = "🇱🇰 +94" },
+        new SelectListItem { Value = "+977", Text = "🇳🇵 +977" },
+        new SelectListItem { Value = "+975", Text = "🇧🇹 +975" }
+    };
+}
+
+<header>
+    <style>
+        @* adding background image to the body cover *@
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/create_background.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            filter: blur(2.2px);
+            opacity: 0.6;
+            z-index: -1;
+        }
+    </style>
+</header>
+
+<h2>Create Student</h2>
+
+<h4>Student</h4>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create">
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RegdNo" class="control-label"></label>
+                <input asp-for="RegdNo" class="form-control" />
+                <span asp-validation-for="RegdNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Course" class="control-label"></label>
+                <select asp-for="Course" class="form-control" asp-items="courses"></select>
+                <span asp-validation-for="Course" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Specilization" class="control-label"></label>
+                <select asp-for="Specilization" class="form-control" asp-items="specializations"></select>
+                <span asp-validation-for="Specilization" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhNo" class="control-label"></label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <select class="form-control" style="width: 100px;">
+                            @foreach (var code in countryCodes)
+                            {
+                                <option value="@code.Value">@code.Text</option>
+                            }
+                        </select>
+                    </div>
+                    <input asp-for="PhNo" class="form-control" />
+                </div>
+                <span asp-validation-for="PhNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary my-2" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

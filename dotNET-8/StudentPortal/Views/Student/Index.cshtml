@@ -1,0 +1,80 @@
+@model StudentPortal.Models.StudentCourseViewModel
+
+@{
+    ViewData["Title"] = "Index";
+    #pragma warning disable CS8604 // Possible null reference argument.
+}
+
+<style>
+    body {
+        background: linear-gradient(to right, #4e54c8, #8f94fb);
+        color: white;
+    }
+    .table {
+        background: linear-gradient(to right, #9ca1ff, #baffe8);
+        border-radius: 10px;
+    }
+    .btn {
+        margin-right: 5px;
+    }
+    #btn_filter {
+        color: yellowgreen;
+        background-color: burlywood;
+        font-weight: bold;
+        font-size: medium;
+    }
+</style>
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="display-4">Students</h1>
+        <a class="btn btn-primary" asp-action="Create">Create New</a>
+    </div>
+    <form asp-action="Index" method="get" class="form-inline my-2 my-lg-0">
+        <select asp-for="Course" asp-items="Model.Courses" class="form-control mr-sm-2">
+            <option value="">All</option>
+        </select>
+        <input class="form-control mr-sm-2 my-2" type="search" placeholder="Search by name" aria-label="Search" asp-for="SearchString">
+        <button class="btn btn-outline-success my-3 my-sm-0" type="submit" id="btn_filter">Filter</button>
+    </form>
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            @if (Model.Students != null && Model.Students.Any())
+            {
+                <thead class="thead-dark">
+                    <tr>
+                        
+                        <th>@Html.DisplayNameFor(model => model.Students.First().Name)</th>
+                        <th>@Html.DisplayNameFor(model => model.Students.First().RegdNo)</th>
+                        <th>@Html.DisplayNameFor(model => model.Students.First().Course)</th>
+                        <th>@Html.DisplayNameFor(model => model.Students.First().Specilization)</th>
+                        <th>@Html.DisplayNameFor(model => model.Students.First().PhNo)</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+            }
+            <tbody>
+                @foreach (var item in Model?.Students ?? new List<Student>())
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                        <td>@Html.DisplayFor(modelItem => item.RegdNo)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Course)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Specilization)</td>
+                        <td>@Html.DisplayFor(modelItem => item.PhNo)</td>
+                        <td>
+                            <a class="btn btn-sm btn-info" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                            <a class="btn btn-sm btn-secondary" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                            <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+@{
+    #pragma warning restore CS8604 // Possible null reference argument.
+}
