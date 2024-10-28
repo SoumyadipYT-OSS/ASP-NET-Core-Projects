@@ -31,7 +31,7 @@ This repository is a collection of ASP.NET Core MVC projects aimed at helping de
 
 The Student Portal project is a web application that allows students to manage their courses, view details, and perform CRUD operations. It includes features such as search functionality, filtering, and user authentication.
 
-![Student Portal](https://via.placeholder.com/800x400.png?text=Student+Portal+Screenshot)
+![ScreenshotStudentPortal](https://github.com/user-attachments/assets/1acad49d-24cf-46b8-9280-30c7ab9e0546)
 
 ## Getting Started 🏁
 
