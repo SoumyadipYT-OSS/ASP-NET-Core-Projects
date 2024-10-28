@@ -1,6 +1,9 @@
 # ASP.NET Core Projects 🚀
 
-![ASP-NET-8](https://github.com/user-attachments/assets/e51966db-2c45-44a0-a249-49c839f33086)    ![Banner4](https://github.com/user-attachments/assets/dd2f715b-23cd-4b4a-b44f-16c245609c79)
+<div style="display: flex; justify-content: space-between;">
+  <img src="https://github.com/user-attachments/assets/e51966db-2c45-44a0-a249-49c839f33086" alt="ASP-NET-8" style="width: 48%;">
+  <img src="https://github.com/user-attachments/assets/dd2f715b-23cd-4b4a-b44f-16c245609c79" alt="Banner4" style="width: 48%;">
+</div>
 
 
 Welcome to the ASP.NET Core Projects repository! This repository contains various projects built using ASP.NET Core MVC .NET 8. Each project demonstrates different features and best practices for building robust web applications.
