@@ -91,7 +91,7 @@ Contributions are welcome! If you have any ideas, suggestions, or improvements, 
 
 ## License 📄
 
-This repository is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+This repository is licensed under the License. See the [LICENSE](LICENSE) file for more information.
 
 ## Contact 📧
 
