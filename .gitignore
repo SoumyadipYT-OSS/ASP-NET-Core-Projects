@@ -1,0 +1,54 @@
+
+# Compiled files & binaries
+bin/
+obj/
+
+# User-specific settings
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.ide
+
+# Logs & cache
+*.log
+**/.vsconfig
+
+# ASP.NET runtime-generated files
+wwwroot/lib/
+wwwroot/dist/
+wwwroot/node_modules/
+
+# Database & EF Core migrations
+*.mdf
+*.ldf
+*.sqlite
+Migrations/
+
+# Package directories
+node_modules/
+packages/
+.nuget/
+
+# Build artifacts
+dist/
+publish/
+bundle.js
+
+# Environment settings & secrets (DO NOT commit sensitive credentials)
+appsettings.Development.json
+appsettings.Local.json
+.env
+
+# Docker files (if applicable)
+docker-compose.override.yml
+*.dockerignore
+
+# JetBrains Rider / VS Code settings
+.idea/
+.vscode/
+
+# Ignore debug & crash reports
+*.pid
+hs_err_pid*
+
