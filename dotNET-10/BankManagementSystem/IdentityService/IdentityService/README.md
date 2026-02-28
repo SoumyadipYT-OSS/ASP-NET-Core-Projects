@@ -487,7 +487,6 @@ MIT License - See LICENSE file for details
 
 For issues, questions, or suggestions:
 - Create an issue on GitHub
-- Contact: support@identityservice.local
 
 ## Roadmap
 
